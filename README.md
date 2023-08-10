@@ -1,2 +1,4 @@
-# web-231
-This is introduction to Javascript course at Bellevue University
+# WEB 231 Enterprise JavaScript I
+## Contributors
+* Instructor: Robert Kumar
+* Student: Jeremy Latesi
