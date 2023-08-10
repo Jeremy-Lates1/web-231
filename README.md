@@ -2,4 +2,4 @@
 ## Contributors
 * Instructor: Robert Kumar
 * Student: Jeremy Lates
-This is introduction to Javascript course at Bellevue University
+* This is introduction to Javascript course at Bellevue University
