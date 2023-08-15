@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link rel="stylesheet" href="../site.css" />
+    <link rel="stylesheet" href="lates-payroll.css" />
+    <link rel="stylesheet" href="global.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h1>Payroll System</h1>
+
+      <h3>Employee record 1</h3>
+      <hr />
+      <ul>
+        <li id="txtFirstNameLudgwig"></li>
+        <li id="txtLastNameBeethoven"></li>
+        <li id="txtAddressLudgwig"></li>
+        <li id="txtHireDateLudgwig"></li>
+        <li id="txtPayRateLudgwig"></li>
+      </ul>
+      <hr />
+      <h3>Employee record 2</h3>
+      <hr />
+      <ul>
+        <li id="txtFirstNameJoham"></li>
+        <li id="txtLastNameBach"></li>
+        <li id="txtAddressJoham"></li>
+        <li id="txtHireDateJoham"></li>
+        <li id="txtPayRateJoham"></li>
+      </ul>
+      <hr />
+      <h3>Employee record 3</h3>
+      <hr />
+      <ul>
+        <li id="txtFirstNameWolfgang"></li>
+        <li id="txtLastNameMozart"></li>
+        <li id="txtAddressWolfgang"></li>
+        <li id="txtHireDateWolfgang"></li>
+        <li id="txtPayRateWolfgang"></li>
+      </ul>
+      <hr />
+      <a class="return-home" href="../index.html">Return</a>
+    </div>
+    <script>
+      /* Binding variables to html fields  */
+      /* Ludgwig Beethoven  */
+      const firstNameLudgwig = "Ludgwig";
+      document.getElementById("txtFirstNameLudgwig").innerHTML =
+        firstNameLudgwig;
+
+      const lastNameBeethoven = "Beethoven";
+      document.getElementById("txtLastNameBeethoven").innerHTML =
+        lastNameBeethoven;
+
+      const addressLudgwig = "505 Main Street";
+      document.getElementById("txtAddressLudgwig").innerHTML = addressLudgwig;
+
+      const hireDateLudgwig = new Date("12/9/2020");
+      document.getElementById("txtHireDateLudgwig").innerHTML =
+        hireDateLudgwig.toLocaleDateString("en-US");
+
+      const payRateLudgwig = 18.9;
+      document.getElementById("txtPayRateLudgwig").innerHTML =
+        payRateLudgwig.toFixed(1);
+
+      /* Joham Bach  */
+      const firstNameJoham = "Joham";
+      document.getElementById("txtFirstNameJoham").innerHTML = firstNameJoham;
+
+      const lastNameBach = "Bach";
+      document.getElementById("txtLastNameBach").innerHTML = lastNameBach;
+
+      const addressJoham = "512 Main Street";
+      document.getElementById("txtAddressJoham").innerHTML = addressJoham;
+
+      const hireDateJoham = new Date("12/9/2020");
+      document.getElementById("txtHireDateJoham").innerHTML =
+        hireDateJoham.toLocaleDateString("en-US");
+
+      const payRateJoham = 25.5;
+      document.getElementById("txtPayRateJoham").innerHTML =
+        payRateJoham.toFixed(1);
+
+      /* Wolfgang Mozart  */
+      const firstNameWolfgang = "Wolfgang";
+      document.getElementById("txtFirstNameWolfgang").innerHTML =
+        firstNameWolfgang;
+
+      const lastNameMozart = "Mozart";
+      document.getElementById("txtLastNameMozart").innerHTML = lastNameMozart;
+
+      const addressWolfgang = "600 Main Street";
+      document.getElementById("txtAddressWolfgang").innerHTML = addressWolfgang;
+
+      const hireDateWolfgang = new Date("12/9/2020");
+      document.getElementById("txtHireDateWolfgang").innerHTML =
+        hireDateWolfgang.toLocaleDateString("en-US");
+
+      const payRateWolfgang = 50.1;
+      document.getElementById("txtPayRateWolfgang").innerHTML =
+        payRateWolfgang.toFixed(1);
+    </script>
+  </body>
+</html>
