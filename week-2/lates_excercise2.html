@@ -14,15 +14,16 @@
     -->
     <div id="container">
       <h1>Excercise 2.2 - Hello Javascript</h1>
-      <button id="btnMyCourse" type="button" onclick="myAlert()">
-        What course am I taking?
-      </button>
+      <button id="btnMyCourse" type="button">What course am I taking?</button>
       <p id="txtMyWorld"></p>
       <a class="return-home" href="../index.html">Return</a>
     </div>
     <script>
       document.getElementById("txtMyWorld").innerHTML =
         "You are now in Lates's world!";
+
+      const element = document.getElementById("btnMyCourse");
+      element.addEventListener("click", myAlert);
 
       function myAlert() {
         alert("WEB 231 – Enterprise JavaScript I.");
