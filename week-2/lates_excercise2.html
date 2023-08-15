@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link rel="stylesheet" href="global.css" />
+  </head>
+  <body>
+    <!--
+        Programming cites
+
+        1. Code adapted from w3schools.com  https://www.w3schools.com/js/tryit.asp?filename=tryjs_alert
+
+
+    -->
+    <div id="container">
+      <h1>Excercise 2.2 - Hello Javascript</h1>
+      <button id="btnMyCourse" type="button" onclick="myAlert()">
+        What course am I taking?
+      </button>
+      <p id="txtMyWorld"></p>
+      <a class="return-home" href="https://jeremy-lates1.github.io/web-231/"
+        >Return</a
+      >
+    </div>
+    <script>
+      document.getElementById("txtMyWorld").innerHTML =
+        "You are now in Lates's world!";
+
+      function myAlert() {
+        alert("WEB 231 – Enterprise JavaScript I.");
+      }
+    </script>
+  </body>
+</html>
