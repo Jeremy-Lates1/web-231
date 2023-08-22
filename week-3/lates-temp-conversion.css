@@ -1,5 +1,7 @@
 body {
-  margin: 0;
+  width: 960px;
+  margin: auto;
+  /* margin: 0; */
   font-family: "Oswald", Verdana, Arial, sans-serif;
 }
 .app-header {
@@ -13,8 +15,8 @@ body {
   width: 500px;
   height: 150px;
   /* in order to make it to align center in github pages I need margin-left of 650px */
-  /* margin-left: 190px; */
-  margin-left: 650px;
+  margin-left: 190px;
+  /* margin-left: 650px; */
   box-shadow: 5px 5px 5px 5px grey;
 }
 #lblValue {
@@ -32,8 +34,8 @@ body {
   width: 500px;
   height: 100px;
   /* in order to make it to align center in github pages I need margin-left of 650px */
-  /* margin-left: 190px; */
-  margin-left: 650px;
+  margin-left: 190px;
+  /* margin-left: 650px; */
   margin-top: 20px;
   box-shadow: 5px 5px 5px 5px grey;
 }
