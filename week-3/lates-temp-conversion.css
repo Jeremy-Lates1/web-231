@@ -38,6 +38,9 @@ body {
   margin-left: 220px;
   font-size: 28px;
 }
+#home-div {
+  margin-top: 10px;
+}
 .return-home {
   color: #4f3674;
   text-decoration: none;
