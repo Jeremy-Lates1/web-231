@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  /* margin: 0; */
   font-family: "Oswald", Verdana, Arial, sans-serif;
 }
 .app-header {
@@ -7,6 +7,7 @@ body {
 }
 .card-title {
   text-align: center;
+  color: darkblue;
 }
 .input-card {
   width: 500px;
