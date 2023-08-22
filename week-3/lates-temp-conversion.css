@@ -1,5 +1,5 @@
 body {
-  /* margin: 0; */
+  margin: 0;
   font-family: "Oswald", Verdana, Arial, sans-serif;
 }
 .app-header {
@@ -12,7 +12,9 @@ body {
 .input-card {
   width: 500px;
   height: 150px;
-  margin-left: 190px;
+  /* in order to make it to align center in github pages I need margin-left of 650px */
+  /* margin-left: 190px; */
+  margin-left: 650px;
   box-shadow: 5px 5px 5px 5px grey;
 }
 #lblValue {
@@ -29,7 +31,9 @@ body {
 .results-card {
   width: 500px;
   height: 100px;
-  margin-left: 190px;
+  /* in order to make it to align center in github pages I need margin-left of 650px */
+  /* margin-left: 190px; */
+  margin-left: 650px;
   margin-top: 20px;
   box-shadow: 5px 5px 5px 5px grey;
 }
@@ -40,7 +44,9 @@ body {
 .return-home {
   color: #4f3674;
   text-decoration: none;
-  margin-left: 200px;
+  /* in order to make it to align center in github pages I need margin-left of 650px */
+  /* margin-left: 200px; */
+  margin-left: 650px;
 }
 .return-home:hover {
   background-color: #d6a800;
