@@ -1,0 +1,54 @@
+body {
+  width: 960px;
+  margin: auto;
+  font-family: "Oswald", Verdana, Arial, sans-serif;
+}
+.app-header {
+  text-align: center;
+}
+.input-card {
+  width: 500px;
+  height: 150px;
+  margin-left: 215px;
+  box-shadow: 5px 5px 5px 5px grey;
+}
+.card-title {
+  text-align: center;
+  color: darkblue;
+}
+#lblSelect {
+  margin: 30px;
+}
+#btnDisplaySequence {
+  background-color: darkblue;
+  color: white;
+  box-shadow: none;
+  border: 0px;
+  margin: 30px;
+  width: 335px;
+}
+.results-card {
+  width: 500px;
+  height: 100px;
+  margin-left: 215px;
+  margin-top: 20px;
+  box-shadow: 5px 5px 5px 5px grey;
+}
+.center {
+  text-align: center;
+}
+
+#home-div {
+  margin-top: 10px;
+}
+.return-home {
+  color: #4f3674;
+  text-decoration: none;
+  margin-left: 215px;
+}
+.return-home:hover {
+  background-color: #d6a800;
+}
+.return-home:visited {
+  color: #3c275a;
+}

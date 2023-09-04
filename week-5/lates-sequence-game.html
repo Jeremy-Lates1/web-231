@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link rel="stylesheet" href="lates-sequence-game.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--
+        Programming cites
+        1. Code adapted from W3schools.com https://www.w3schools.com/css/css_dropdowns.asp
+        2. Code adapted from mdn web docs https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+        3. Code adapted from freecodecamp.org https://www.freecodecamp.org/news/how-to-loop-through-an-array-in-javascript-js-iterate-tutorial/
+        4. Code adapted from W3resource https://www.w3resource.com/javascript-exercises/javascript-conditional-statements-and-loops-exercise-5.php
+        5. Code adapted from mdn web docs https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while
+        -->
+    <div id="container">
+      <h1 class="app-header">Welcome to the sequence game!</h1>
+      <div class="input-card">
+        <h2 class="card-title">Sequence Selection Form</h2>
+        <label id="lblSelect">Choose a number sequence</label>
+        <select id="sequence" class="drop-down-menu">
+          <option value="select">--Select--</option>
+          <option value="fibonacci">Fibonacci Sequence</option>
+          <option value="even">Even Numbers</option>
+          <option value="odd">Odd Numbers</option>
+        </select>
+        <div>
+          <button id="btnDisplaySequence">Display Sequence</button>
+        </div>
+      </div>
+      <div class="results-card">
+        <h2 class="card-title">Sequence Results</h2>
+        <div class="center"><label id="lblResults"></label></div>
+      </div>
+      <div id="home-div">
+        <a class="return-home" href="../index.html">Return</a>
+      </div>
+    </div>
+    <script>
+      /* Register btnDisplaySequence for onclick function  */
+      document.getElementById("btnDisplaySequence").onclick = function () {
+        processSequence();
+      };
+      function processSequence() {
+        let myResults = "";
+        const selectionErrorMsg = "Invalid selection, please try again!";
+        /* Assign sequence from the page to the variable choice */
+        let choice = document.getElementById("sequence").value;
+        //Determine selection and process
+        if (choice === "fibonacci") {
+          const numbers = ["0", "1", "2", "3", "5", "8", "13", "21", "34"];
+          let fibonacciSequenceText = "";
+          //Loop through numbers and add to fibonacciSequenceText
+          let i = 0;
+          while (i < numbers.length) {
+            //fibonacciSequenceText += numbers[i];
+            //Add commas in between numbers but not after last one
+            fibonacciSequenceText += numbers[i];
+            //If at end of sequence no comma needed
+            if (i < 8) {
+              fibonacciSequenceText += ",";
+            }
+            myResults = fibonacciSequenceText;
+            i++;
+          }
+        } else if (choice === "even") {
+          let i = 1;
+          const max = 18; // Max even number less than 20
+          do {
+            //Add if an even number
+            if (i % 2 === 0) {
+              myResults += i;
+              // if i is less max then comma is added
+              if (i < max) {
+                myResults += ",";
+              }
+            }
+            i++;
+          } while (i < 20);
+        } else if (choice === "odd") {
+          const max = 19;
+          for (let i = 0; i < 20; i++) {
+            //Add if an odd number
+            if (i % 2 !== 0) {
+              myResults += i;
+              // if i is less max then comma is added
+              if (i < max) {
+                myResults += ",";
+              }
+            }
+          }
+        } else {
+          //No Selection made
+          alert(selectionErrorMsg);
+        }
+        document.getElementById("lblResults").innerHTML = myResults;
+      }
+    </script>
+  </body>
+</html>
