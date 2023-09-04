@@ -53,7 +53,7 @@
         let choice = document.getElementById("sequence").value;
         //Determine selection and process
         if (choice === "fibonacci") {
-          const numbers = ["0", "1", "2", "3", "5", "8", "13", "21", "34"];
+          const numbers = ["0", "1", "1", "2", "3", "5", "8", "13", "21", "34"];
           let fibonacciSequenceText = "";
           //Loop through numbers and add to fibonacciSequenceText
           let i = 0;
@@ -62,7 +62,7 @@
             //Add commas in between numbers but not after last one
             fibonacciSequenceText += numbers[i];
             //If at end of sequence no comma needed
-            if (i < 8) {
+            if (i < 9) {
               fibonacciSequenceText += ",";
             }
             myResults = fibonacciSequenceText;
