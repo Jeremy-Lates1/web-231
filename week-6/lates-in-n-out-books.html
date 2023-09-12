@@ -141,6 +141,9 @@
           document.getElementById("authorsDiv").style.display = "block";
 
           document.getElementById("results").style.display = "block";
+        } else {
+          //Select was chosen. Remove div
+          document.getElementById("results").style.display = "none";
         }
       };
       alert(choice);
