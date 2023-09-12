@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link rel="stylesheet" href="lates-in-n-out-books.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--
+        Programming cites
+        1. Code adapted from W3schools.com https://www.w3schools.com/css/css_display_visibility.asp
+        2. Code adapted from W3schools.com https://www.w3schools.com/css/tryit.asp?filename=trycss_display_js
+        3. Code adapted from W3schools.com https://www.w3schools.com/html/html_tables.asp 
+        4. Code adapted from W3schools.com https://www.w3schools.com/css/tryit.asp?filename=trycss_table_hover 
+      -->
+    <div id="container">
+      <h1 class="app-header">Welcome to In-N-Out-Books!</h1>
+      <div class="input-card">
+        <h2 class="card-title">My Favorites</h2>
+        <label id="lblSelect">Choose listing:</label>
+        <select id="favoriteList" class="drop-down-menu">
+          <option value="select">--Select--</option>
+          <option value="books">Top 3 Favorite Books</option>
+          <option value="authors">Top 3 Favorite Authors</option>
+        </select>
+        <div>
+          <button id="btnDisplayListing">Display Listing</button>
+        </div>
+      </div>
+      <div id="results" class="results-card">
+        <h2 id="title" class="card-title"></h2>
+        <div id="booksDiv">
+          <table>
+            <tr class="tblHeader">
+              <th>ISBN</th>
+              <th>Title</th>
+              <th>Pages</th>
+            </tr>
+            <tr class="row">
+              <td id="book1ISBN"></td>
+              <td id="book1Title"></td>
+              <td id="book1Pages"></td>
+            </tr>
+            <tr class="row">
+              <td id="book2ISBN"></td>
+              <td id="book2Title"></td>
+              <td id="book2Pages"></td>
+            </tr>
+            <tr class="row">
+              <td id="book3ISBN"></td>
+              <td id="book3Title"></td>
+              <td id="book3Pages"></td>
+            </tr>
+          </table>
+        </div>
+        <div id="authorsDiv">
+          <table>
+            <tr class="tblHeader">
+              <th>Name</th>
+              <th>Genre</th>
+            </tr>
+            <tr class="row">
+              <td id="author1Name"></td>
+              <td id="author1Genre"></td>
+            </tr>
+            <tr class="row">
+              <td id="author2Name"></td>
+              <td id="author2Genre"></td>
+            </tr>
+            <tr class="row">
+              <td id="author3Name"></td>
+              <td id="author3Genre"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div id="home-div">
+        <a class="return-home" href="../index.html">Return</a>
+      </div>
+    </div>
+    <script>
+      //Books
+      const book1 = { isbn: "12345", title: "The Old Place", pages: "100" };
+      const book2 = { isbn: "67891", title: "Happy Place", pages: "200" };
+      const book3 = { isbn: "12121", title: "Tress", pages: "500" };
+
+      //Authors
+      const author1 = { name: "J.D. Robb", genre: "Mystery" };
+      const author2 = { name: "Emily Henry", genre: "Romance" };
+      const author3 = { name: "John Grisham", genre: "Thriller" };
+
+      /* Register btnDisplayListing for onclick function  */
+      document.getElementById("btnDisplayListing").onclick = function () {
+        //Set choice variable
+        let choice = document.getElementById("favoriteList").value;
+
+        let title = document.getElementById("title");
+
+        //Display either book or author
+        if (choice === "books") {
+          document.getElementById("book1ISBN").innerHTML = book1.isbn;
+          document.getElementById("book1Title").innerHTML = book1.title;
+          document.getElementById("book1Pages").innerHTML = book1.pages;
+
+          document.getElementById("book2ISBN").innerHTML = book2.isbn;
+          document.getElementById("book2Title").innerHTML = book2.title;
+          document.getElementById("book2Pages").innerHTML = book2.pages;
+
+          document.getElementById("book3ISBN").innerHTML = book3.isbn;
+          document.getElementById("book3Title").innerHTML = book3.title;
+          document.getElementById("book3Pages").innerHTML = book3.pages;
+
+          title.innerHTML = "Top 3 Favorite Books";
+          //Make sure authors table is not showing
+          document.getElementById("authorsDiv").style.display = "none";
+
+          //Make sure books table is showing
+          document.getElementById("booksDiv").style.display = "block";
+
+          document.getElementById("results").style.display = "block";
+        } else if (choice === "authors") {
+          document.getElementById("author1Name").innerHTML = author1.name;
+          document.getElementById("author1Genre").innerHTML = author1.genre;
+
+          document.getElementById("author2Name").innerHTML = author2.name;
+          document.getElementById("author2Genre").innerHTML = author2.genre;
+
+          document.getElementById("author3Name").innerHTML = author3.name;
+          document.getElementById("author3Genre").innerHTML = author3.genre;
+
+          title.innerHTML = "Top 3 Favorite Authors";
+
+          //Make sure books table is not showing
+          document.getElementById("booksDiv").style.display = "none";
+
+          //Make sure authors table is showing
+          document.getElementById("authorsDiv").style.display = "block";
+
+          document.getElementById("results").style.display = "block";
+        }
+      };
+      alert(choice);
+    </script>
+  </body>
+</html>
