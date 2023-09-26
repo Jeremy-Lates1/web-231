@@ -4,7 +4,8 @@ body {
   font-family: "Oswald", Verdana, Arial, sans-serif;
 }
 .app-header {
-  text-align: center;
+  /*text-align: center;*/
+  margin-left: 235px;
 }
 .input-card {
   width: 400px;
