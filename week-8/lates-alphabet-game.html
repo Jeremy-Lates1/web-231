@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link rel="stylesheet" href="lates-alphabet-game.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--
+        Programming cites
+        1. Code adapted from W3schools.com https://www.w3schools.com/js/js_arrays.asp 
+        2. Code adapted from mdn web docs https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined
+        3. Code adapted from W3schools.com https://www.w3schools.com/js/js_loop_for.asp 
+        4. Code adapted from W3schools.com https://www.w3schools.com/jsref/jsref_slice_array.asp
+      -->
+    <div id="container">
+      <h1 class="app-header">Welcome to Alphabet Game!!</h1>
+      <div class="input-card">
+        <h2 class="card-title">Alphabet Number Form</h2>
+        <label id="lblSelect">Alphabet Letter Position</label>
+        <input typ="text" id="txPosition" name="txtPosition" />
+        <div>
+          <button id="btnFindLetter">Find Letter</button>
+        </div>
+      </div>
+      <div id="home-div">
+        <a class="return-home" href="../index.html">Return</a>
+      </div>
+      <div class="alphabet-card">
+        <h2 class="card-title">Letters in the Alphabet</h2>
+        <label id="lblAlphabet"></label>
+
+      </div>
+      <div id="results" class="results-card">
+        <h2 id="title" class="card-title">Results</h2>
+        
+        <label id="lblResults"></label>
+    </div>
+    <script>
+
+    /*Set array of alphabet letters */
+    const alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+    
+    //This string will be used to hold the comma separated
+    let alphabetOutput = "";
+    
+    //Load up alphabetOutput
+   for (let i=0;i < alphabet.length; i++){
+   
+     alphabetOutput += alphabet[i] + ",";
+    }
+    
+    //Slice off the trailing comma
+    alphabetOutput = alphabetOutput.slice(0,-1);
+    
+    //Bind alphabetOutput to alphabet-card
+    document.getElementById("lblAlphabet").innerHTML =
+    alphabetOutput;
+    
+    /* Register btnFindLetter for onclick function  */
+    document.getElementById("btnFindLetter").onclick = function () {
+
+    //Set listing variable
+    let pos = document.getElementById("txPosition").value;
+    
+     //Capture the letter selected.  Because arrays are zero based we need to minus one from pos
+     let letter = alphabet[pos-1];
+
+     //Create output message variable
+     let outputMessage = "";
+
+    //Make sure the selection is valid
+    if (letter === undefined){
+      outputMessage = "There are not " + pos + " letters in the alphabet.";
+    }
+    else{
+      //Because arrays aer zero based we need to add 1 to the pos 
+      
+      outputMessage = letter + " is at position " + pos + " in the alphabet.";
+    }
+
+    //Bind outputMessage to results      
+    document.getElementById("lblResults").innerHTML =
+    outputMessage;
+
+    };
+    </script>
+  </body>
+</html>
