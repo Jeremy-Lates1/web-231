@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WEB 231 – Enterprise JavaScript I</title>
+    <link rel="stylesheet" href="lates-card-game.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--
+        Programming cites
+        1. Code adapted from W3schools.com https://www.w3schools.com/js/js_classes.asp
+        2. COde adapted from w3schools.com https://www.w3schools.com/js/js_loop_for.asp
+        3. Code adapted from w3school.com https://www.w3schools.com/js/js_switch.asp
+        4. Code adapted from w3school.com https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_display_grid
+
+
+    -->
+    <div id="container">
+      <h1 class="app-header">Welcome to the card game!</h1>
+      <div class="input-card">
+        <h2 class="card-title">Card Dealer</h2>
+
+        <div>
+          <button id="btnDealCards">Deal Cards</button>
+        </div>
+      </div>
+      <div id="home-div">
+        <a class="return-home" href="../index.html">Return</a>
+      </div>
+      <div id="player-cards-div">
+        <div class="player-card-title">
+          <h2 class="card-title">Shuffled Cards</h2>
+        </div>
+        <div id="player-card-container" class="grid-container">
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      //Create Card class
+      class Card {
+        constructor(face, suit) {
+          this.face = face;
+          this.suit = suit;
+        }
+      }
+      //Create Dealer class
+      class Dealer {
+        constructor() {
+          this.getDeckOfCards();
+        }
+        CARD_COUNT = 52;
+        cards = [];
+        faces = [
+          "A",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "J",
+          "Q",
+          "K",
+        ];
+        suits = ["Hearts", "Diamonds", "Clubs", "Spades"];
+
+        //Loop through 52 and add cards to the dealer cards array
+        getDeckOfCards() {
+          //alert("Get Deck of Cards");
+          for (let i = 0; i < this.CARD_COUNT; i++) {
+            this.cards[i] = new Card(
+              this.faces[i % 13],
+              this.suits[Math.floor(i / 13)]
+            );
+            //console.log("Card: " + this.cards[i].suit);
+          }
+        }
+
+        //SHuffle 52 deck of cards
+        shuffle() {
+          //alert("shuffle");
+
+          //Loop through 52 cards and shuffle
+          for (let firstCard = 0; firstCard < this.CARD_COUNT; firstCard++) {
+            //Generate a random number
+            let secondCard = Math.floor(Math.random() * this.CARD_COUNT);
+
+            //Set the tempCard to the first card in the cards array
+            let tempCard = this.cards[firstCard];
+            //console.log("tempCard : " + tempCard.suit);
+
+            //Assign the first card the second card value
+            this.cards[firstCard] = this.cards[secondCard];
+            //console.log("first Card : " + this.cards[firstCard].suit);
+
+            //Assign the second card the temp card value
+            this.cards[secondCard] = tempCard;
+            console.log("Second Card : " + this.cards[secondCard].suit);
+          }
+        }
+      }
+      //This function builds the card to be bind to the page
+      function buildPlayerCard(card, suitIcon, faceColor, suitColor) {
+        return `<div class="card"> <div class="card-title" style="text-align: left; font-size: 20px;padding-left: 10px; color: ${faceColor}">${card.face}</div><div class="card-content"><span class="${suitIcon}" style="color: ${suitColor}"></span></div></div>`;
+      }
+
+      /* Register btnDealerCards for onclick function  */
+      document.getElementById("btnDealCards").onclick = function () {
+        let dealer = new Dealer();
+        dealer.shuffle();
+
+        //This will be used to bind to the player-card-container
+        let cardOutputWithIcon = "";
+
+        //Loop through dealer cards and create div to bind to page
+        for (const myCard of dealer.cards) {
+          switch (myCard.suit) {
+            case "Hearts":
+              cardOutputWithIcon += buildPlayerCard(
+                myCard,
+                "mdi mdi-heart",
+                "red",
+                "red"
+              );
+
+              break;
+            case "Diamonds":
+              cardOutputWithIcon += buildPlayerCard(
+                myCard,
+                "mdi mdi-cards-diamond",
+                "red",
+                "red"
+              );
+
+              break;
+            case "Clubs":
+              cardOutputWithIcon += buildPlayerCard(
+                myCard,
+                "mdi mdi-cards-club",
+                "black",
+                "black"
+              );
+
+              break;
+            case "Spades":
+              cardOutputWithIcon += buildPlayerCard(
+                myCard,
+                "mdi mdi-cards-spade",
+                "black",
+                "black"
+              );
+
+              break;
+          }
+        }
+        //Bind cardOutputWithIcon to page
+        //console.log("Output: " + cardOutputWithIcon);
+        document.getElementById("player-card-container").innerHTML =
+          cardOutputWithIcon;
+        //Set results frame height
+        document.getElementById("player-cards-div").style.height = "880px";
+      };
+    </script>
+  </body>
+</html>

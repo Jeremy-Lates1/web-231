@@ -1,0 +1,69 @@
+body {
+  width: 960px;
+  margin: auto;
+  font-family: "Oswald", Verdana, Arial, sans-serif;
+}
+.app-header {
+  text-align: center;
+}
+.input-card {
+  width: 500px;
+  height: 80px;
+  margin-left: 215px;
+  box-shadow: 5px 5px 5px 5px grey;
+}
+.card-title {
+  text-align: center;
+  color: darkblue;
+  margin-bottom: 0px;
+}
+
+#btnDealCards {
+  background-color: darkblue;
+  color: white;
+  box-shadow: none;
+  border: 0px;
+  margin-left: 100px;
+  margin-top: 10px;
+  width: 290px;
+}
+
+#home-div {
+  margin-top: 10px;
+}
+.return-home {
+  color: #4f3674;
+  text-decoration: none;
+  margin-left: 215px;
+}
+.return-home:hover {
+  background-color: #d6a800;
+}
+.return-home:visited {
+  color: #3c275a;
+}
+.center {
+  text-align: center;
+}
+/* Player card section */
+#player-cards-div {
+  width: 500px;
+  height: 50px;
+  margin-left: 215px;
+  margin-top: 20px;
+  box-shadow: 5px 5px 5px 5px grey;
+}
+.grid-item {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+.player-card-title {
+  width: 500px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+}
